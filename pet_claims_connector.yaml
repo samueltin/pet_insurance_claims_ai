@@ -1,0 +1,110 @@
+swagger: '2.0'
+info:
+  title: Pet Claims Engine
+  description: Extracts a vet invoice with Azure Document Intelligence and assesses the claim
+  version: '1.0'
+host: YOUR-DEFAULT-DOMAIN
+basePath: /api
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /process-vet-claim:
+    post:
+      summary: Process vet claim
+      description: Reads the vet invoice, checks it against the policy and returns a decision
+      operationId: ProcessVetClaim
+      x-ms-visibility: important
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - fileContent
+              - petName
+              - policyStartDate
+              - annualLimit
+              - excess
+            properties:
+              fileContent:
+                type: string
+                format: byte
+                description: Base64 content of the vet invoice
+              petName:
+                type: string
+              policyStartDate:
+                type: string
+                description: Policy start date (yyyy-mm-dd)
+              annualLimit:
+                type: number
+              excess:
+                type: number
+              paidToDate:
+                type: number
+              confidenceThreshold:
+                type: number
+              autoApproveLimit:
+                type: number
+              waitingPeriodDays:
+                type: integer
+      responses:
+        default:
+          description: default
+          schema:
+            type: object
+            properties:
+              practiceName:
+                type: string
+              invoiceNumber:
+                type: string
+              invoiceDate:
+                type: string
+              ownerName:
+                type: string
+              statedTotal:
+                type: number
+                x-nullable: true
+              taxAmount:
+                type: number
+                x-nullable: true
+              confidence:
+                type: number
+              petNameFound:
+                type: boolean
+              pageCount:
+                type: integer
+              decision:
+                type: string
+              decisionReasons:
+                type: string
+              linesTotal:
+                type: number
+              eligibleAmount:
+                type: number
+              payableAmount:
+                type: number
+              lines:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    description:
+                      type: string
+                    amount:
+                      type: number
+                    excluded:
+                      type: boolean
+                    exclusionReason:
+                      type: string
+securityDefinitions:
+  api_key:
+    type: apiKey
+    in: header
+    name: x-functions-key
+security:
+  - api_key: []

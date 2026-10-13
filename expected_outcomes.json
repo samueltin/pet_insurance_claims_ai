@@ -1,0 +1,82 @@
+[
+  {
+    "file": "01_Riverside_Veterinary_Clinic.pdf",
+    "policy": "PET-10001",
+    "layout": "classic",
+    "purpose": "Straightforward claim",
+    "total": 121.68,
+    "decision": "Auto-approved",
+    "payable": 22.68,
+    "reasons": ""
+  },
+  {
+    "file": "02_Oakwood_Animal_Hospital.pdf",
+    "policy": "PET-10004",
+    "layout": "modern",
+    "purpose": "Partial exclusion (routine dental)",
+    "total": 532.2,
+    "decision": "Auto-approved",
+    "payable": 91.2,
+    "reasons": "1 line(s) excluded: Routine dental care"
+  },
+  {
+    "file": "03_Greenfields_Veterinary_Hospital.pdf",
+    "policy": "PET-10005",
+    "layout": "multipage",
+    "purpose": "Multi-page, high value",
+    "total": 2791.32,
+    "decision": "Referred",
+    "payable": 2641.32,
+    "reasons": "Payable above auto-approve limit (500)"
+  },
+  {
+    "file": "04_Paws_and_Claws_Veterinary_Centre.pdf",
+    "policy": "PET-10002",
+    "layout": "receipt",
+    "purpose": "Receipt style, VAT inclusive, near annual limit",
+    "total": 135.6,
+    "decision": "Auto-approved",
+    "payable": 20.0,
+    "reasons": "Capped at remaining annual limit (20.00)"
+  },
+  {
+    "file": "05_St_Margarets_Veterinary_Surgery_SCANNED.pdf",
+    "policy": "PET-10001",
+    "layout": "scanned",
+    "purpose": "Scanned, skewed, noisy",
+    "total": 174.0,
+    "decision": "Auto-approved",
+    "payable": 75.0,
+    "reasons": ""
+  },
+  {
+    "file": "06_Hillcrest_Veterinary_Referrals.pdf",
+    "policy": "PET-10003",
+    "layout": "letterhead",
+    "purpose": "Within waiting period",
+    "total": 393.6,
+    "decision": "Referred",
+    "payable": 273.6,
+    "reasons": "Treatment within 14-day waiting period"
+  },
+  {
+    "file": "07_Meadowbank_Vets.pdf",
+    "policy": "PET-10001",
+    "layout": "plain",
+    "purpose": "All lines excluded",
+    "total": 104.4,
+    "decision": "Declined",
+    "payable": 0.0,
+    "reasons": "2 line(s) excluded: Preventive treatment, Routine vaccination; Eligible amount does not exceed the excess"
+  },
+  {
+    "file": "08_Thameside_Pet_Clinic.pdf",
+    "policy": "PET-10004",
+    "layout": "landscape",
+    "purpose": "Pet name mismatch",
+    "total": 89.76,
+    "decision": "Referred",
+    "payable": 0.0,
+    "reasons": "Pet name 'Luna' not found on invoice"
+  }
+]
